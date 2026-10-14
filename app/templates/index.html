@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Borehole Entry</title>
+</head>
+<body>
+  <h1>New Borehole</h1>
+
+  {% if error %}
+    <p id="error" style="color:red">{{ error }}</p>
+  {% endif %}
+
+  {% if result %}
+    <p id="result">Borehole {{ result.name }} saved (id {{ result.id }}).</p>
+  {% endif %}
+
+  <form method="post" action="/">
+    <label>Name <input id="name" name="name"></label><br>
+    <label>Latitude <input id="latitude" name="latitude"></label><br>
+    <label>Longitude <input id="longitude" name="longitude"></label><br>
+    <label>Total depth (m) <input id="total_depth" name="total_depth"></label><br>
+    <button id="submit" type="submit">Save</button>
+  </form>
+</body>
+</html>
